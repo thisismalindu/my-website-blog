@@ -9,7 +9,7 @@ const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 const md = new MarkdownIt();
 
-const POSTS_DIR = path.join(__dirname, "src", "posts");
+const POSTS_DIR = path.join(__dirname, "src");
 const TEMPLATES_DIR = path.join(__dirname, "templates");
 
 const POST_TEMPLATE = fs.readFileSync(path.join(TEMPLATES_DIR, "post.html"), "utf-8");
