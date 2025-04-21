@@ -2,7 +2,10 @@
 
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import MarkdownIt from "markdown-it";
+
+const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 const md = new MarkdownIt();
 
