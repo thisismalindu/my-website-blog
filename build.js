@@ -1,8 +1,10 @@
 // build.js
 
-const fs = import("fs");
-const path = import("path");
-const md = import("markdown-it")();
+import fs from "fs";
+import path from "path";
+import MarkdownIt from "markdown-it";
+
+const md = new MarkdownIt();
 
 const POSTS_DIR = path.join(__dirname, "src", "posts");
 const PUBLIC_DIR = path.join(__dirname, "public");
