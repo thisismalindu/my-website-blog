@@ -10,7 +10,6 @@ const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const md = new MarkdownIt();
 
 const POSTS_DIR = path.join(__dirname, "src", "posts");
-const PUBLIC_DIR = path.join(__dirname, "public");
 const TEMPLATES_DIR = path.join(__dirname, "templates");
 
 const POST_TEMPLATE = fs.readFileSync(path.join(TEMPLATES_DIR, "post.html"), "utf-8");
@@ -45,7 +44,7 @@ function buildPostPage(slug, metadata, content) {
   page = page.replace("{{date}}", metadata.date || "");
   page = page.replace("{{content}}", content);
 
-  fs.writeFileSync(path.join(PUBLIC_DIR, "posts", `${slug}.html`), page);
+  fs.writeFileSync(path.join(__dirname, "posts", `${slug}.html`), page);
 }
 
 function buildBlogPage(postSummaries) {
@@ -62,12 +61,12 @@ function buildBlogPage(postSummaries) {
     .join("\n");
 
   const blogHTML = BLOG_TEMPLATE.replace(BLOG_PLACEHOLDER, postsHTML);
-  fs.writeFileSync(path.join(PUBLIC_DIR, "blog.html"), blogHTML);
+  fs.writeFileSync(path.join(__dirname, "blog.html"), blogHTML);
 }
 
 function buildAll() {
-  if (!fs.existsSync(path.join(PUBLIC_DIR, "posts"))) {
-    fs.mkdirSync(path.join(PUBLIC_DIR, "posts"), { recursive: true });
+  if (!fs.existsSync(path.join(__dirname, "posts"))) {
+    fs.mkdirSync(path.join(__dirname, "posts"), { recursive: true });
   }
 
   const files = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".md"));
