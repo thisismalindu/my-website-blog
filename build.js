@@ -40,6 +40,7 @@ function extractMetadataAndContent(fileContent) {
 
 function buildPostPage(slug, metadata, content) {
   let page = POST_TEMPLATE.replace("{{title}}", metadata.title || "Untitled");
+  page = page.replace("{{title}}", metadata.title || "Untitled");
   page = page.replace("{{author}}", metadata.author || "Unknown");
   page = page.replace("{{date}}", metadata.date || "");
   page = page.replace("{{content}}", content);
