@@ -45,14 +45,14 @@ function buildPostPage(slug, metadata, content) {
   page = page.replace("{{date}}", metadata.date || "");
   page = page.replace("{{content}}", content);
 
-  fs.writeFileSync(path.join(__dirname, "posts", `${slug}.html`), page);
+  fs.writeFileSync(path.join(__dirname, `${slug}.html`), page);
 }
 
 function buildBlogPage(postSummaries) {
   const postsHTML = postSummaries
     .map((post) => {
       return `
-        <a href="/posts/${post.slug}.html" class="block p-4 border-b hover:bg-gray-50">
+        <a href="/${post.slug}.html" class="block p-4 border-b hover:bg-gray-50">
           <h2 class="text-xl font-bold">${post.title}</h2>
           <p class="text-sm text-gray-600">${post.date} — ${post.author}</p>
           <p class="mt-1">${post.excerpt}</p>
@@ -62,13 +62,13 @@ function buildBlogPage(postSummaries) {
     .join("\n");
 
   const blogHTML = BLOG_TEMPLATE.replace(BLOG_PLACEHOLDER, postsHTML);
-  fs.writeFileSync(path.join(__dirname, "blog.html"), blogHTML);
+  fs.writeFileSync(path.join(__dirname, "index.html"), blogHTML);
 }
 
 function buildAll() {
-  if (!fs.existsSync(path.join(__dirname, "posts"))) {
-    fs.mkdirSync(path.join(__dirname, "posts"), { recursive: true });
-  }
+  // if (!fs.existsSync(path.join(__dirname, "build"))) {
+  //   fs.mkdirSync(path.join(__dirname, "build"), { recursive: true });
+  // }
 
   const files = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".md"));
   const postSummaries = [];

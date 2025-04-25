@@ -3,10 +3,11 @@
     "version": "1.0.0",
     "type": "module",
     "scripts": {
-      "build": "node build.js"
+        "build": "node build.js"
     },
     "dependencies": {
-      "markdown-it": "^13.0.1"
+        "@tailwindcss/cli": "^4.1.4",
+        "markdown-it": "^13.0.1",
+        "tailwindcss": "^4.1.4"
     }
-  }
-  
+}
