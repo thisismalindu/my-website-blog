@@ -5,6 +5,18 @@ date: "2025-04-21"
 excerpt: "Why going static gives you total control and SEO without tears."
 img: "/img/static-wins.png"
 -->
-# Why Static Wins
 
-Content goes here...
+some other content
+
+## meow meow
+
+**sadasd**
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main(){
+    return 0;
+}
+```

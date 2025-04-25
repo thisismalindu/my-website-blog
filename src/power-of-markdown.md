@@ -5,7 +5,6 @@ date: "2025-04-22"
 excerpt: "Discover how Markdown simplifies content creation for developers and writers alike."
 img: "/img/markdown-power.png"
 -->
-# The Power of Markdown
 
 Markdown is a lightweight markup language that allows you to write using an easy-to-read, easy-to-write plain text format. It’s widely used for documentation, blogs, and even note-taking.
 

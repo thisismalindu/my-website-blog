@@ -5,14 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{title}}</title>
   <link href="./style.css" rel="stylesheet">
+  <link href="./reset.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
 </head>
-<body class="max-w-3xl mx-auto px-4 py-8 text-gray-800 bg-white font-sans">
-  <article>
-    <h1 class="text-3xl font-bold mb-2">{{title}}</h1>
-    <p class="text-sm text-gray-500 mb-6">By {{author}} — {{date}}</p>
-    <div class="prose max-w-none">
+<body>
+  <a href="/" class="home">← back</a>
+
+  <div class="post">
+    <h1>{{title}}</h1>
+    <p>By {{author}} — {{date}}</p>
+    <article>
       {{content}}
-    </div>
-  </article>
+    </article>
+  </div>
 </body>
 </html>

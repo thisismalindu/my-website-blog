@@ -4,10 +4,21 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import MarkdownIt from "markdown-it";
+import hljs from "highlight.js"; // Import highlight.js
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
-const md = new MarkdownIt();
+// Configure MarkdownIt with syntax highlighting
+const md = new MarkdownIt({
+  highlight: (str, lang) => {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return `<pre><div class="language-label">${lang}</div><code class="hljs ${lang}">${hljs.highlight(str, { language: lang }).value}</code></pre>`;
+      } catch (__) {}
+    }
+    return `<pre><code>${md.utils.escapeHtml(str)}</code></pre>`;
+  },
+});
 
 const POSTS_DIR = path.join(__dirname, "src");
 const TEMPLATES_DIR = path.join(__dirname, "templates");
@@ -33,14 +44,14 @@ function extractMetadataAndContent(fileContent) {
   }
 
   const markdownContent = fileContent.replace(metadataRegex, "").trim();
-  const htmlContent = md.render(markdownContent);
+  const htmlContent = md.render(markdownContent); // Render Markdown with syntax highlighting
 
   return { metadata, htmlContent };
 }
 
 function buildPostPage(slug, metadata, content) {
   let page = POST_TEMPLATE.replace("{{title}}", metadata.title || "Untitled");
-  page = page.replace("{{title}}", metadata.title || "Untitled");
+  page = page.replace("{{title}}", metadata.title || "Unknown");
   page = page.replace("{{author}}", metadata.author || "Unknown");
   page = page.replace("{{date}}", metadata.date || "");
   page = page.replace("{{content}}", content);
@@ -52,10 +63,10 @@ function buildBlogPage(postSummaries) {
   const postsHTML = postSummaries
     .map((post) => {
       return `
-        <a href="/${post.slug}.html" class="block p-4 border-b hover:bg-gray-50">
-          <h2 class="text-xl font-bold">${post.title}</h2>
-          <p class="text-sm text-gray-600">${post.date} — ${post.author}</p>
-          <p class="mt-1">${post.excerpt}</p>
+        <a href="/${post.slug}.html" class="post-summary">
+          <h2 class="title">${post.title}</h2>
+          <p class="date">${post.date} — ${post.author}</p>
+          <p class="excerpt">${post.excerpt}</p>
         </a>
       `;
     })
@@ -66,10 +77,6 @@ function buildBlogPage(postSummaries) {
 }
 
 function buildAll() {
-  // if (!fs.existsSync(path.join(__dirname, "build"))) {
-  //   fs.mkdirSync(path.join(__dirname, "build"), { recursive: true });
-  // }
-
   const files = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".md"));
   const postSummaries = [];
 
