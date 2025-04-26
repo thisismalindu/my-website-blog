@@ -27,6 +27,7 @@ const POST_TEMPLATE = fs.readFileSync(path.join(TEMPLATES_DIR, "post.html"), "ut
 const BLOG_TEMPLATE = fs.readFileSync(path.join(TEMPLATES_DIR, "blog-template.html"), "utf-8");
 
 const BLOG_PLACEHOLDER = "<!-- POSTS_PLACEHOLDER -->";
+const PINNED_PLACEHOLDER = "<!-- PINNED_PLACEHOLDER -->";
 const LAST_BUILD_TIME = "LAST_BUILD_TIME";
 
 
@@ -70,7 +71,26 @@ function buildBlogPage(postSummaries) {
     LAST_BUILD_TIME,
     `Last build: ${sriLankaTime} (Sri Lanka Time)`
   );
-  const postsHTML = postSummaries
+
+  // Separate pinned and regular posts
+  const pinnedPosts = postSummaries.filter((post) => post.pinned === true);
+  const regularPosts = postSummaries.filter((post) => !post.pinned);
+
+  // Generate HTML for pinned posts
+  const pinnedHTML = pinnedPosts
+    .map((post) => {
+      return `
+        <a href="/${post.slug}.html" class="post-summary pinned">
+          <h2 class="title">${post.title}</h2>
+          <p class="date">${post.date} — ${post.author}</p>
+          <p class="excerpt">${post.excerpt}</p>
+        </a>
+      `;
+    })
+    .join("\n");
+
+  // Generate HTML for regular posts
+  const postsHTML = regularPosts
     .map((post) => {
       return `
         <a href="/${post.slug}.html" class="post-summary">
@@ -82,7 +102,11 @@ function buildBlogPage(postSummaries) {
     })
     .join("\n");
 
-  const blogHTML = blogHTMLWithTime.replace(BLOG_PLACEHOLDER, postsHTML);
+  // Replace placeholders in the blog template
+  const blogHTML = blogHTMLWithTime
+    .replace(PINNED_PLACEHOLDER, pinnedHTML)
+    .replace(BLOG_PLACEHOLDER, postsHTML);
+
   fs.writeFileSync(path.join(__dirname, "index.html"), blogHTML);
 }
 
@@ -103,6 +127,7 @@ function buildAll() {
       author: metadata.author || "Unknown",
       date: metadata.date || "",
       excerpt: metadata.excerpt || "",
+      pinned: metadata.pinned === "True", // Convert string to boolean
     });
   });
 

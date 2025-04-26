@@ -30,6 +30,19 @@ body {
   color: var(--text-color);
 }
 
+.posts-sections-title{
+  margin-bottom: 10px;
+  color: var(--dimmed-text-color);
+}
+
+header{
+    text-align: center;
+}
+
+header .blog-description{
+  font-size: 0.8rem;
+}
+
 /* Header Styles */
 h1 {
   font-size: 2.5rem;
@@ -180,6 +193,11 @@ article pre .language-label {
 
 .action-button span {
   font-size: 24px;
+}
+
+.action-button svg{
+  width: 30px;
+  height: 30px;
 }
 
 /* Links */
