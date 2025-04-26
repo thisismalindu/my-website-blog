@@ -272,3 +272,9 @@ footer p{
   background-color: transparent;
   
 }
+
+li{
+  font-size: 0.9rem;
+  list-style-type: circle;
+  margin-left: 2rem;
+}
