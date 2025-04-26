@@ -278,3 +278,10 @@ li{
   list-style-type: circle;
   margin-left: 2rem;
 }
+
+code:not([class]) {
+  background-color: var(--background-color);
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-weight: bold;
+}
