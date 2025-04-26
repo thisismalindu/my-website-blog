@@ -72,25 +72,23 @@
     }
 
     function sharePost() {
-      removeAllToasts(); // Remove existing toasts before showing a new one
-
+      if (navigator.share) {
       const title = '{{title}}';
       const excerpt = '{{excerpt}}';
       const url = window.location.href;
-      const shareContent = `${title}\n${excerpt}\n${url}`;
 
-      navigator.clipboard.writeText(shareContent).then(() => {
-        const toast = document.createElement("div");
-        toast.textContent = "Post details copied to clipboard!";
-        toast.className = "toast";
-        document.body.appendChild(toast);
-
-        setTimeout(() => {
-          document.body.removeChild(toast);
-        }, 3000);
+      navigator.share({
+        title: title,
+        text: excerpt,
+        url: url
+      }).then(() => {
+        console.log("Post shared successfully!");
       }).catch(err => {
-        console.error("Failed to copy post details:", err);
+        console.error("Failed to share post:", err);
       });
+      } else {
+      console.error("Web Share API is not supported in this browser.");
+      }
     }
 
     function copyMarkdown() {
