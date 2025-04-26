@@ -7,7 +7,7 @@ img: "/img/static-wins.png"
 pinned: True  
 -->
 
-# How I Built This Blog
+## How I Built This Blog
 
 When I started this blog, I did not want to use heavy frameworks or backend systems. I wanted something simple and fast that I could fully control.
 
@@ -15,7 +15,7 @@ So I built it with **Markdown**, **HTML**, **CSS**, **a little bit of JavaScript
 
 ---
 
-## 🛠️ How It Works
+### 🛠️ How It Works
 
 I write my blog posts in Markdown files. Each file has a small block at the top where I add things like the title, author, date, and an excerpt.  
 It looks like this:
@@ -37,7 +37,7 @@ It creates one HTML page per post and also updates the main blog page with all t
 
 ---
 
-## 🚀 Deployment
+### 🚀 Deployment
 
 I do not manually upload anything.  
 I just **push my Markdown files and the build script to GitHub**.  
@@ -48,7 +48,7 @@ It is fast, simple, and I do not have to think about servers or databases. 😎
 
 ---
 
-## 🧠 Why I Chose This Method
+### 🧠 Why I Chose This Method
 
 I did not want complexity. I just wanted a space to post my thoughts.
 
@@ -62,7 +62,7 @@ That said, even normal blogs do something similar in the background, so it is no
 
 ---
 
-## ✨ Final Thoughts
+### ✨ Final Thoughts
 
 This blog might not have all the shiny features of big blogs.  
 But it is **mine**, it is **simple**, it is **fast**, and it works exactly how I want.
