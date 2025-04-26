@@ -50,12 +50,17 @@
     function printContent() {
       const content = document.querySelector('.article-container article').innerHTML;
 
-      // Open a new window or tab
-      const printWindow = window.open('', '_blank');
+      // Create a hidden iframe
+      const iframe = document.createElement('iframe');
+      iframe.style.position = 'absolute';
+      iframe.style.top = '-10000px';
+      iframe.style.left = '-10000px';
+      document.body.appendChild(iframe);
 
-      // Write the content to the new window
-      printWindow.document.open();
-      printWindow.document.write(`
+      // Write the content to the iframe
+      const iframeDoc = iframe.contentWindow.document;
+      iframeDoc.open();
+      iframeDoc.write(`
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -69,13 +74,15 @@
         </body>
         </html>
       `);
-      printWindow.document.close();
+      iframeDoc.close();
 
-      // Wait for the new window to load, then trigger print
-      printWindow.onload = () => {
-        printWindow.focus();
-        printWindow.print();
-        printWindow.close(); // Close the window after printing
+      // Wait for the iframe content to load, then print
+      iframe.onload = () => {
+        iframe.contentWindow.focus();
+        iframe.contentWindow.print();
+
+        // Remove the iframe after printing
+        document.body.removeChild(iframe);
       };
     }
 
