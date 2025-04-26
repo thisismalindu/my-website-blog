@@ -49,41 +49,26 @@
 
     function printContent() {
       const content = document.querySelector('.article-container article').innerHTML;
+      const originalContent = document.body.innerHTML;
 
-      // Create a hidden iframe
-      const iframe = document.createElement('iframe');
-      iframe.style.position = 'absolute';
-      iframe.style.top = '-10000px';
-      iframe.style.left = '-10000px';
-      document.body.appendChild(iframe);
+      document.body.innerHTML = `
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Print Content</title>
+        <link href="./style.css" rel="stylesheet">
+          </head>
+          <body>
+        ${content}
+          </body>
+          </html>
+        `;
 
-      // Write the content to the iframe
-      const iframeDoc = iframe.contentWindow.document;
-      iframeDoc.open();
-      iframeDoc.write(`
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Print Content</title>
-          <link href="./style.css" rel="stylesheet">
-        </head>
-        <body>
-          ${content}
-        </body>
-        </html>
-      `);
-      iframeDoc.close();
-
-      // Wait for the iframe content to load, then print
-      iframe.onload = () => {
-        iframe.contentWindow.focus();
-        iframe.contentWindow.print();
-
-        // Remove the iframe after printing
-        document.body.removeChild(iframe);
-      };
+      window.print();
+      document.body.innerHTML = originalContent;
+      window.location.reload();
     }
 
     function sharePost() {
