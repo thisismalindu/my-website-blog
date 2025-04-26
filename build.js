@@ -64,8 +64,12 @@ function buildPostPage(slug, metadata, content, markdownContent) {
 }
 
 function buildBlogPage(postSummaries) {
-  const lastBuildTime = new Date().toLocaleString(); // Get the current date and time
-  const blogHTMLWithTime = BLOG_TEMPLATE.replace(LAST_BUILD_TIME, `Last build: ${lastBuildTime}`);
+  const sriLankaTimeZone = "Asia/Colombo"; // Timezone for Sri Lanka
+  const sriLankaTime = new Date().toLocaleString("en-US", { timeZone: sriLankaTimeZone }); // Convert time to Sri Lanka timezone
+  const blogHTMLWithTime = BLOG_TEMPLATE.replace(
+    LAST_BUILD_TIME,
+    `Last build: ${sriLankaTime} (Sri Lanka Time)`
+  );
   const postsHTML = postSummaries
     .map((post) => {
       return `
