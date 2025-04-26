@@ -3,6 +3,8 @@
   --background-color: #282c34;
   --text-color: #abb2bf;
   --header-color: #e06c75;
+  --header2-color: #e1ef61;
+  --header3-color: #61efad;
   --section-background: #292e38;
   --section-border: hsl(220, 15%, 23%);
   --section-border-hover: hsl(220, 15%, 40%);
@@ -13,6 +15,9 @@
   --code-background: #21252b;
   --link-color: #61afef;
   --home-link-color: #abb2bf;
+  
+  --toast-background: #44658b;
+  --fba-background: #2c313c;
 }
 
 /* General Styles */
@@ -88,11 +93,15 @@ article {
   text-align: start;
 }
 
-article h1 {
-  font-size: 2rem;
-  color: var(--header-color);
+article h2 {
+  color: var(--header2-color);
   margin-bottom: 10px;
   text-align: start;
+}
+
+article h3 {
+  color: var(--header3-color);
+  margin-bottom: 10px;
 }
 
 article p {
@@ -116,6 +125,57 @@ article pre .language-label {
   padding: 2px 10px;
 }
 
+.copy-markdown {
+  background: none;
+  color: var(--text-color);
+  border: none;
+  margin-top: 10px;
+}
+
+
+.article-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.floating-actions {
+  position: fixed;
+  right: 10px; 
+  top: 20rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  background: var(--article-background);
+  border: 1px solid var(--article-border);
+  border-radius:20rem;
+  overflow: hidden;
+
+}
+
+.action-button {
+  background: none;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* border-radius:20rem; */
+
+}
+
+.action-button:hover {
+  background-color: var(--article-border);
+}
+
+.action-button span {
+  font-size: 24px;
+}
+
 /* Links */
 a {
   color: var(--link-color);
@@ -137,4 +197,20 @@ a:hover {
 
 .home:hover {
   text-decoration: none;
+}
+
+hr {
+  border: 1px solid var(--section-border);
+  margin: 20px 0;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--toast-background);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000;
 }

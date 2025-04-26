@@ -46,15 +46,17 @@ function extractMetadataAndContent(fileContent) {
   const markdownContent = fileContent.replace(metadataRegex, "").trim();
   const htmlContent = md.render(markdownContent); // Render Markdown with syntax highlighting
 
-  return { metadata, htmlContent };
+  return { metadata, htmlContent, markdownContent };
 }
 
-function buildPostPage(slug, metadata, content) {
+function buildPostPage(slug, metadata, content, markdownContent) {
   let page = POST_TEMPLATE.replace("{{title}}", metadata.title || "Untitled");
-  page = page.replace("{{title}}", metadata.title || "Unknown");
-  page = page.replace("{{author}}", metadata.author || "Unknown");
-  page = page.replace("{{date}}", metadata.date || "");
-  page = page.replace("{{content}}", content);
+  page = page.replace(/{{title}}/g, metadata.title || "Unknown"); // Use global replace to replace all occurrences of {{title}}
+  page = page.replace(/{{author}}/g, metadata.author || "Unknown");
+  page = page.replace(/{{excerpt}}/g, metadata.excerpt || "Unknown");
+  page = page.replace(/{{date}}/g, metadata.date || "");
+  page = page.replace(/{{content}}/g, content);
+  page = page.replace(/{{markdown}}/g, markdownContent); // Use markdownContent directly
 
   fs.writeFileSync(path.join(__dirname, `${slug}.html`), page);
 }
@@ -83,9 +85,9 @@ function buildAll() {
   files.forEach((file) => {
     const slug = file.replace(/\.md$/, "");
     const raw = fs.readFileSync(path.join(POSTS_DIR, file), "utf-8");
-    const { metadata, htmlContent } = extractMetadataAndContent(raw);
+    const { metadata, htmlContent, markdownContent } = extractMetadataAndContent(raw); // Get markdownContent
 
-    buildPostPage(slug, metadata, htmlContent);
+    buildPostPage(slug, metadata, htmlContent, markdownContent); // Pass markdownContent directly
 
     postSummaries.push({
       slug,

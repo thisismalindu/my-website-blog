@@ -1,22 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{title}}</title>
   <link href="./style.css" rel="stylesheet">
   <link href="./reset.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=markdown_copy" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
 </head>
+
 <body>
   <a href="/" class="home">← back</a>
 
   <div class="post">
     <h1>{{title}}</h1>
     <p>By {{author}} — {{date}}</p>
-    <article>
-      {{content}}
-    </article>
+    <div class="article-container">
+      <article>
+        {{content}}
+      </article>
+      <!-- Floating Action Buttons -->
+      <div class="floating-actions">
+        <button class="action-button" onclick="copyMarkdown()" title="Copy as Markdown">
+          <span class="material-symbols-outlined" aria-label="Copy as Markdown" data-tooltip="Copy as Markdown">markdown_copy</span>
+        </button>
+        <button class="action-button" onclick="printContent()" title="Print">
+          <span class="material-icons" aria-label="Print" data-tooltip="Print">print</span>
+        </button>
+        <button class="action-button" onclick="sharePost()" title="Share">
+          <span class="material-icons" aria-label="Share" data-tooltip="Share">share</span>
+        </button>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+
+
+    function removeAllToasts() {
+      const toasts = document.querySelectorAll('.toast');
+      toasts.forEach(toast => toast.remove());
+    }
+
+    function printContent() {
+      const content = document.querySelector('.article-container article').innerHTML;
+      const originalContent = document.body.innerHTML;
+
+      document.body.innerHTML = `
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Print Content</title>
+        <link href="./style.css" rel="stylesheet">
+          </head>
+          <body>
+        ${content}
+          </body>
+          </html>
+        `;
+
+      window.print();
+      document.body.innerHTML = originalContent;
+      window.location.reload();
+    }
+
+    function sharePost() {
+      removeAllToasts(); // Remove existing toasts before showing a new one
+
+      const title = '{{title}}';
+      const excerpt = '{{excerpt}}';
+      const url = window.location.href;
+      const shareContent = `${title}\n${excerpt}\n${url}`;
+
+      navigator.clipboard.writeText(shareContent).then(() => {
+        const toast = document.createElement("div");
+        toast.textContent = "Post details copied to clipboard!";
+        toast.className = "toast";
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+          document.body.removeChild(toast);
+        }, 3000);
+      }).catch(err => {
+        console.error("Failed to copy post details:", err);
+      });
+    }
+
+    function copyMarkdown() {
+
+      removeAllToasts(); // Remove existing toasts before showing a new one
+
+      const markdownContent = `{{markdown}}`; // Placeholder for Markdown content
+      navigator.clipboard.writeText(markdownContent).then(() => {
+        const toast = document.createElement("div");
+        toast.textContent = "Markdown copied to clipboard!";
+        toast.className = "toast";
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+          document.body.removeChild(toast);
+        }, 3000);
+      }).catch(err => {
+        console.error("Failed to copy Markdown:", err);
+      });
+    }
+  </script>
 </body>
+
 </html>
