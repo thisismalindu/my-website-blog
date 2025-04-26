@@ -3,7 +3,7 @@ title: "How I Built This Blog"
 author: "Malindu"  
 date: "2025-04-26"  
 excerpt: "How I made this blog using a simple build script, without any fancy frameworks or backends."  
-img: "/img/static-wins.png"  
+img: "/img/how-i-built-this-blog.png"  
 pinned: True  
 -->
 

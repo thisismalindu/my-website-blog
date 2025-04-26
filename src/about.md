@@ -3,7 +3,7 @@ title: "How, What, Why and About"
 author: "Malindu"  
 date: "2025-04-26"  
 excerpt: "A quick intro about me, this blog, and how to find your way around."  
-img: "/img/static-wins.png"  
+img: "/img/about.png"
 pinned: True  
 -->
 
