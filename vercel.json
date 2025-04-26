@@ -1,0 +1,174 @@
+{
+  "redirects": [
+    {
+      "source": "/webdev101/:path*",
+      "destination": "https://webdev101.thisismalindu.com/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/extra/:path*",
+      "destination": "https://thisismalindu.github.io/www/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/extra/",
+      "destination": "https://thisismalindu.github.io/www/",
+      "statusCode": 301
+    },
+    {
+      "source": "/main.cpp",
+      "destination": "https://gist.github.com/thisismalindu/cb0b1bdf8938641596e0a0eb0f18231b",
+      "statusCode": 301
+    },
+    {
+      "source": "/imagegallery.html",
+      "destination": "https://thisismalindu.github.io/www/imagegallery.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/html-css-only.html",
+      "destination": "https://thisismalindu.github.io/www/html-css-only.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/basicwebsite.html",
+      "destination": "https://thisismalindu.github.io/www/basicwebsite.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/basicwebsite",
+      "destination": "https://thisismalindu.github.io/basic-website-tutorial-webdev101/",
+      "statusCode": 301
+    },
+    {
+      "source": "/basicwebsite/:path*",
+      "destination": "https://thisismalindu.github.io/basic-website-tutorial-webdev101/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/downloads",
+      "destination": "https://thisismalindu.github.io/www/downloads",
+      "statusCode": 301
+    },
+    {
+      "source": "/downloads/:path*",
+      "destination": "https://thisismalindu.github.io/www/downloads/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/courses",
+      "destination": "https://webdev101.thisismalindu.com/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact",
+      "destination": "/telegram",
+      "statusCode": 301
+    },
+    {
+      "source": "/webdev101/",
+      "destination": "https://webdev101.thisismalindu.com/",
+      "statusCode": 301
+    },
+    {
+      "source": "/webdev101",
+      "destination": "https://webdev101.thisismalindu.com/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fb",
+      "destination": "https://fb.com/thisismalindu",
+      "statusCode": 301
+    },
+    {
+      "source": "/facebook",
+      "destination": "https://fb.com/thisismalindu",
+      "statusCode": 301
+    },
+    {
+      "source": "/ig",
+      "destination": "https://instagram.com/thisismalindu",
+      "statusCode": 301
+    },
+    {
+      "source": "/instagram",
+      "destination": "https://instagram.com/thisismalindu",
+      "statusCode": 301
+    },
+    {
+      "source": "/yt",
+      "destination": "https://youtube.com/@thisismalindu",
+      "statusCode": 301
+    },
+    {
+      "source": "/youtube",
+      "destination": "https://youtube.com/@thisismalindu",
+      "statusCode": 301
+    },
+    {
+      "source": "/tt",
+      "destination": "https://tiktok.com/@thisismalindu",
+      "statusCode": 301
+    },
+    {
+      "source": "/tiktok",
+      "destination": "https://tiktok.com/@thisismalindu",
+      "statusCode": 301
+    },
+    {
+      "source": "/gh",
+      "destination": "https://github.com/thisismalindu",
+      "statusCode": 301
+    },
+    {
+      "source": "/github",
+      "destination": "https://github.com/thisismalindu",
+      "statusCode": 301
+    },
+    {
+      "source": "/gh/:path*",
+      "destination": "https://github.com/thisismalindu/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/github/:path*",
+      "destination": "https://github.com/thisismalindu/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/tw",
+      "destination": "https://x.com/thisismalindu",
+      "statusCode": 301
+    },
+    {
+      "source": "/twitter",
+      "destination": "https://x.com/thisismalindu",
+      "statusCode": 301
+    },
+    {
+      "source": "/x",
+      "destination": "https://x.com/thisismalindu",
+      "statusCode": 301
+    },
+    {
+      "source": "/tg",
+      "destination": "https://t.me/thisismalindu",
+      "statusCode": 301
+    },
+    {
+      "source": "/telegram",
+      "destination": "https://t.me/thisismalindu",
+      "statusCode": 301
+    },
+    {
+      "source": "/whatsapp",
+      "destination": "https://wa.me/+94757768268",
+      "statusCode": 301
+    },
+    {
+      "source": "/wa",
+      "destination": "https://wa.me/+94757768268",
+      "statusCode": 301
+    }
+  ]
+}
