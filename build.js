@@ -27,6 +27,8 @@ const POST_TEMPLATE = fs.readFileSync(path.join(TEMPLATES_DIR, "post.html"), "ut
 const BLOG_TEMPLATE = fs.readFileSync(path.join(TEMPLATES_DIR, "blog-template.html"), "utf-8");
 
 const BLOG_PLACEHOLDER = "<!-- POSTS_PLACEHOLDER -->";
+const LAST_BUILD_TIME = "LAST_BUILD_TIME";
+
 
 function extractMetadataAndContent(fileContent) {
   const metadataRegex = /<!--([\s\S]*?)-->/;
@@ -62,6 +64,8 @@ function buildPostPage(slug, metadata, content, markdownContent) {
 }
 
 function buildBlogPage(postSummaries) {
+  const lastBuildTime = new Date().toLocaleString(); // Get the current date and time
+  const blogHTMLWithTime = BLOG_TEMPLATE.replace(LAST_BUILD_TIME, `Last build: ${lastBuildTime}`);
   const postsHTML = postSummaries
     .map((post) => {
       return `
@@ -74,7 +78,7 @@ function buildBlogPage(postSummaries) {
     })
     .join("\n");
 
-  const blogHTML = BLOG_TEMPLATE.replace(BLOG_PLACEHOLDER, postsHTML);
+  const blogHTML = blogHTMLWithTime.replace(BLOG_PLACEHOLDER, postsHTML);
   fs.writeFileSync(path.join(__dirname, "index.html"), blogHTML);
 }
 

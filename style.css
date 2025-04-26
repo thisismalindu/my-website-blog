@@ -38,6 +38,12 @@ h1 {
   margin: 20px 0;
 }
 
+.last_build_time {
+  font-size: 0.8rem;
+  color: var(--dimmed-text-color);
+  text-align: center;
+}
+
 .blog-name {
   margin-top: 2rem;
 }
