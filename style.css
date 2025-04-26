@@ -103,6 +103,7 @@ section {
 
 .post {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 /* Article Styles */
@@ -199,10 +200,7 @@ article pre .language-label {
   font-size: 24px;
 }
 
-.action-button svg{
-  width: 30px;
-  height: 30px;
-}
+
 
 /* Links */
 a {
@@ -241,4 +239,36 @@ hr {
   padding: 10px 20px;
   border-radius: 5px;
   z-index: 1000;
+}
+
+footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+
+footer p{
+  color: var(--dimmed-text-color);
+  font-size: 0.8rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 2rem;
+}
+
+.social-links .action-button{
+  width: auto;
+  height: auto;
+  color: var(--link-color);
+  font-size: 0.8rem;
+}
+
+.social-links .action-button:hover {
+  background-color: transparent;
+  
 }
