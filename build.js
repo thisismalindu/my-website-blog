@@ -54,11 +54,12 @@ function extractMetadataAndContent(fileContent) {
 
 function buildPostPage(slug, metadata, content, markdownContent) {
   let page = POST_TEMPLATE.replace("{{title}}", metadata.title || "Untitled");
-  page = page.replace(/{{title}}/g, metadata.title || "Unknown"); // Use global replace to replace all occurrences of {{title}}
+  page = page.replace(/{{title}}/g, metadata.title || "Unknown"); // Replace all occurrences of {{title}}
   page = page.replace(/{{author}}/g, metadata.author || "Unknown");
   page = page.replace(/{{excerpt}}/g, metadata.excerpt || "Unknown");
   page = page.replace(/{{date}}/g, metadata.date || "");
   page = page.replace(/{{content}}/g, content);
+  page = page.replace(/{{featuredimage}}/g, metadata.img || ""); // Replace {{featuredimage}} with the img value
 
   function escapeForJSString(str) {
     return str
@@ -68,7 +69,7 @@ function buildPostPage(slug, metadata, content, markdownContent) {
       .replace(/\n/g, '\\n');
   }
   page = page.replace(/{{markdown}}/g, escapeForJSString(markdownContent));
-  
+
   fs.writeFileSync(path.join(__dirname, `${slug}.html`), page);
 }
 
