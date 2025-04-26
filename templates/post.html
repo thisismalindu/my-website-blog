@@ -121,7 +121,7 @@
   
         navigator.share({
           title: title,
-          text: title + excerpt,
+          text: title + '\n' + excerpt,
           url: url
         }).then(() => {
           console.log("Post shared successfully!");
