@@ -49,26 +49,34 @@
 
     function printContent() {
       const content = document.querySelector('.article-container article').innerHTML;
-      const originalContent = document.body.innerHTML;
 
-      document.body.innerHTML = `
-          <!DOCTYPE html>
-          <html lang="en">
-          <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Print Content</title>
-        <link href="./style.css" rel="stylesheet">
-          </head>
-          <body>
-        ${content}
-          </body>
-          </html>
-        `;
+      // Open a new window or tab
+      const printWindow = window.open('', '_blank');
 
-      window.print();
-      document.body.innerHTML = originalContent;
-      window.location.reload();
+      // Write the content to the new window
+      printWindow.document.open();
+      printWindow.document.write(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Print Content</title>
+          <link href="./style.css" rel="stylesheet">
+        </head>
+        <body>
+          ${content}
+        </body>
+        </html>
+      `);
+      printWindow.document.close();
+
+      // Wait for the new window to load, then trigger print
+      printWindow.onload = () => {
+        printWindow.focus();
+        printWindow.print();
+        printWindow.close(); // Close the window after printing
+      };
     }
 
     function sharePost() {
