@@ -59,8 +59,16 @@ function buildPostPage(slug, metadata, content, markdownContent) {
   page = page.replace(/{{excerpt}}/g, metadata.excerpt || "Unknown");
   page = page.replace(/{{date}}/g, metadata.date || "");
   page = page.replace(/{{content}}/g, content);
-  page = page.replace(/{{markdown}}/g, markdownContent); // Use markdownContent directly
 
+  function escapeForJSString(str) {
+    return str
+      .replace(/\\/g, '\\\\')
+      .replace(/`/g, '\\`')
+      .replace(/\$/g, '\\$')
+      .replace(/\n/g, '\\n');
+  }
+  page = page.replace(/{{markdown}}/g, escapeForJSString(markdownContent));
+  
   fs.writeFileSync(path.join(__dirname, `${slug}.html`), page);
 }
 
