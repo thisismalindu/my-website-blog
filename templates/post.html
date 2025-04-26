@@ -5,7 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:image" content={{featuredimage}} />
-  <link rel="icon" href="https://avatars.githubusercontent.com/u/39488765?s=400&u=692e900ae1b38d3a03e939aaf04adea696ee80e8&v=4" type="image/x-icon">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
   <title>{{title}}</title>
   <link href="./style.css" rel="stylesheet">
   <link href="./reset.css" rel="stylesheet">
@@ -46,14 +51,14 @@
 
 
 
-  
+
   <footer>
     <p>
       Built with ✨ and occasional frustration. <br>
       Open source at <a href="https://github.com/thisismalindu/my-website-blog/" target="_blank">GitHub</a>. © Malindu
       Bandara.
     </p>
-    
+
     <div class="social-links">
 
       <a href="https://thisismalindu.com/github" class="action-button" target="_blank" rel="noopener noreferrer">
@@ -75,17 +80,17 @@
       const toasts = document.querySelectorAll('.toast');
       toasts.forEach(toast => toast.remove());
     };
-  
+
     window.printContent = function () {
       const content = document.querySelector('.article-container article').innerHTML;
-  
+
       // Create a hidden iframe
       const iframe = document.createElement('iframe');
       iframe.style.position = 'absolute';
       iframe.style.top = '-10000px';
       iframe.style.left = '-10000px';
       document.body.appendChild(iframe);
-  
+
       // Write the content to the iframe
       const iframeDoc = iframe.contentWindow.document;
       iframeDoc.open();
@@ -104,23 +109,23 @@
         </html>
       `);
       iframeDoc.close();
-  
+
       // Wait for the iframe content to load, then print
       iframe.onload = () => {
         iframe.contentWindow.focus();
         iframe.contentWindow.print();
-  
+
         // Remove the iframe after printing
         document.body.removeChild(iframe);
       };
     };
-  
+
     window.sharePost = function () {
       if (navigator.share) {
         const title = '{{title}}';
         const excerpt = '{{excerpt}}';
         const url = window.location.href;
-  
+
         navigator.share({
           title: title,
           text: title + '\n' + excerpt,
@@ -134,17 +139,17 @@
         console.error("Web Share API is not supported in this browser.");
       }
     };
-  
+
     window.copyMarkdown = function () {
       window.removeAllToasts(); // Remove existing toasts before showing a new one
-  
+
       const markdownContent = `{{markdown}}`; // Placeholder for Markdown content
       navigator.clipboard.writeText(markdownContent).then(() => {
         const toast = document.createElement("div");
         toast.textContent = "Markdown copied to clipboard!";
         toast.className = "toast";
         document.body.appendChild(toast);
-  
+
         setTimeout(() => {
           document.body.removeChild(toast);
         }, 3000);
@@ -153,7 +158,7 @@
       });
     };
   </script>
-  
+
 </body>
 
 </html>
