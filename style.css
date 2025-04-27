@@ -33,6 +33,7 @@ body {
 .posts-sections-title{
   margin-bottom: 10px;
   color: var(--dimmed-text-color);
+  font-size: 0.8rem;
 }
 
 header{
@@ -83,7 +84,8 @@ section {
   border: 1px solid var(--section-border);
   border-radius: 8px;
   transition: all 0.1s;
-  padding: 1rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
 }
 
 .post-summary:hover {
@@ -92,8 +94,8 @@ section {
 }
 
 .post-summary .title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  margin-bottom: 2px;
   color: var(--title-color);
 }
 
