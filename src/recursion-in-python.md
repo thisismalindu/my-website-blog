@@ -8,10 +8,6 @@ pinned: False
 tags: kuppi
 -->
 
-## Understanding Recursion in Python (Simplified Guide)
-
----
-
 ### 1. What is Recursion?
 Recursion means a function calls itself to solve a smaller piece of the same problem. Instead of solving a big task all at once, you break it down into simpler parts and solve each one in the same way.
 
