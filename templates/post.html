@@ -53,6 +53,9 @@
       </article>
       <!-- Floating Action Buttons -->
       <div class="floating-actions">
+        <button class="action-button" onclick="editPost()" title="Edit Post">
+          <span class="material-icons" aria-label="Edit Post" data-tooltip="Edit Post">edit</span>
+        </button>
         <button class="action-button" onclick="copyMarkdown()" title="Copy as Markdown">
           <span class="material-symbols-outlined" aria-label="Copy as Markdown"
             data-tooltip="Copy as Markdown">markdown_copy</span>
@@ -94,6 +97,13 @@
 
 
   <script>
+
+    window.editPost = function () {
+      const postId = '{{postId}}'; // Replace with the actual post ID
+      const editUrl = `https://thisismalindu.com/github/my-website-blog/edit/main/src/${postId}.md`;
+      window.open(editUrl, '_blank');
+    };
+
     // Attach functions to the global `window` object
     window.removeAllToasts = function () {
       const toasts = document.querySelectorAll('.toast');

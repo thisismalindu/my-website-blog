@@ -56,6 +56,7 @@ function buildPostPage(slug, metadata, content, markdownContent) {
   let page = POST_TEMPLATE.replace("{{title}}", metadata.title || "Untitled");
   page = page.replace(/{{title}}/g, metadata.title || "Unknown"); // Replace all occurrences of {{title}}
   page = page.replace(/{{author}}/g, metadata.author || "Unknown");
+  page = page.replace(/{{postId}}/g, slug);
   page = page.replace(/{{excerpt}}/g, metadata.excerpt || "Unknown");
   page = page.replace(/{{date}}/g, metadata.date || "");
   page = page.replace(/{{content}}/g, content);
