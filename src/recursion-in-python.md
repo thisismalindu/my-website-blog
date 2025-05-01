@@ -20,7 +20,7 @@ def greet():
     greet()  # This repeats forever and never stops
 ```
 
-To stop it from going on forever, we need a stopping point — called the **base case**.
+To stop it from going on forever, we need a stopping point - called the **base case**.
 
 ---
 
@@ -30,9 +30,9 @@ Let’s start with a simple real-world example.
 
 **🔍 Searching a Name in a Phone Book (Recursive Thinking)**
 
-Imagine you’re trying to find a name — say, “Perera” — in a printed phone book that’s sorted alphabetically. You open the book to the middle and see the name “Fernando.” Since “Perera” comes after “Fernando,” you ignore the first half and repeat the process with the second half. Then you do it again with the next smaller half, and so on, until you find the name or run out of pages.
+Imagine you’re trying to find a name - say, “Perera” - in a printed phone book that’s sorted alphabetically. You open the book to the middle and see the name “Fernando.” Since “Perera” comes after “Fernando,” you ignore the first half and repeat the process with the second half. Then you do it again with the next smaller half, and so on, until you find the name or run out of pages.
 
-That’s recursive thinking in action. You're solving the same problem ("find the name") in a smaller and smaller sub-problem (smaller part of the phone book) until you reach the base case — either you find it, or it’s not there.
+That’s recursive thinking in action. You're solving the same problem ("find the name") in a smaller and smaller sub-problem (smaller part of the phone book) until you reach the base case - either you find it, or it’s not there.
 
 Here’s what that logic would look like as code:
 
@@ -49,7 +49,7 @@ def find_name(book, target):
         return find_name(book[:mid], target)
 ```
 
-This is exactly how **binary search** works — and it’s a classic recursive algorithm. You don’t need to write recursion for this, but the idea helps explain why some problems are naturally solved by recursion.
+This is exactly how **binary search** works - and it’s a classic recursive algorithm. You don’t need to write recursion for this, but the idea helps explain why some problems are naturally solved by recursion.
 
 You could use loops instead of recursion, and that’s often better. But recursion can be easier to write and understand for some problems.
 
@@ -67,7 +67,7 @@ You could use loops instead of recursion, and that’s often better. But recursi
 
 ---
 
-Recursion is not some magical concept. It's just a different way of solving problems — often easier to write and think about when the problem naturally splits into smaller versions of itself. You don't *have* to use recursion. If you can solve something with a loop, that’s fine — and often more efficient in speed and memory. But when recursion fits, it often leads to the **cleanest and most intuitive** code, especially early on in problem-solving.
+Recursion is not some magical concept. It's just a different way of solving problems - often easier to write and think about when the problem naturally splits into smaller versions of itself. You don't *have* to use recursion. If you can solve something with a loop, that’s fine - and often more efficient in speed and memory. But when recursion fits, it often leads to the **cleanest and most intuitive** code, especially early on in problem-solving.
 
 ### 3. Important Ideas
 
@@ -221,7 +221,7 @@ Each call is paused until the next one finishes.
 
 ### 8. Tail Recursion (Why It Doesn’t Help in Python)
 
-**Tail recursion** is when the function calls itself at the very end — and does nothing after that call.
+**Tail recursion** is when the function calls itself at the very end - and does nothing after that call.
 
 In some languages, this is optimized to run faster. In Python, it’s **not**.
 
@@ -245,7 +245,7 @@ def tail_factorial(n, acc=1):
     return tail_factorial(n - 1, acc * n)
 ```
 
-Python treats both the same — both will crash for large `n`.
+Python treats both the same - both will crash for large `n`.
 
 #### GCD is Already Tail Recursive:
 
@@ -358,5 +358,5 @@ sys.setrecursionlimit(2000)  # Be careful with this
 
 ---
 
-If you learn to think recursively, you'll be able to break down hard problems into simpler ones. It's not magic — it's just practice!
+If you learn to think recursively, you'll be able to break down hard problems into simpler ones. It's not magic - it's just practice!
 
