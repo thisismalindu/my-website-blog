@@ -8,6 +8,12 @@ pinned: False
 tags: kuppi
 -->
 
+💡 **If you're new to recursion**, I recommend watching this short video by BroCode:  
+👉 [What is Recursion? | BroCode](https://www.youtube.com/watch?v=ivl5-snqul8)  
+It explains the concept with 3 simple examples in a way that's super easy to understand.
+
+After that, come back here for a deeper dive into recursion with more examples and explanations. This post goes a lot further, but the video is a great starting point.
+
 ### 1. What is Recursion?
 
 Recursion means a function calls itself to solve a smaller piece of the same problem. Instead of solving a big task all at once, you break it down into simpler parts and solve each one in the same way.
