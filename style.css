@@ -113,8 +113,11 @@ article {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background: var(--article-background);
-  border: 1px solid var(--article-border);
+  /* background: var(--article-background); */
+  /* border: 1px solid var(--article-border); */
+  border-top: 1px solid var(--article-border);
+  margin-top: 50px;
+  padding-top: 40px;
   border-radius: 8px;
   text-align: start;
 }
