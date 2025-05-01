@@ -28,7 +28,7 @@ To stop it from going on forever, we need a stopping point — called the **base
 
 Let’s start with a simple real-world example.
 
-#### 🔍 Searching a Name in a Phone Book (Recursive Thinking)
+**🔍 Searching a Name in a Phone Book (Recursive Thinking)**
 
 Imagine you’re trying to find a name — say, “Perera” — in a printed phone book that’s sorted alphabetically. You open the book to the middle and see the name “Fernando.” Since “Perera” comes after “Fernando,” you ignore the first half and repeat the process with the second half. Then you do it again with the next smaller half, and so on, until you find the name or run out of pages.
 
