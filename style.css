@@ -111,13 +111,20 @@ section {
 /* Article Styles */
 article {
   max-width: 800px;
-  margin: 50px auto auto auto;
-  padding: 40px 20px 20px 20px;
-  /* background: var(--article-background); */
-  /* border: 1px solid var(--article-border); */
-  border-top: 1px solid var(--article-border);
+  min-width: 300px;
+  margin: 20px 20px;
+  padding: 20px;
+  background: var(--article-background);
+  border: 1px solid var(--article-border);
   border-radius: 8px;
   text-align: start;
+}
+
+@media (max-width: 600px) {
+  article {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 article h2 {
