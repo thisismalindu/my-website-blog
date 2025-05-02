@@ -199,9 +199,9 @@ def fast_power_iter(x, n):
 #### 5.4 Palindrome
 
 Try this yourself. It is pretty easy. You can find some hints here:
-[Level 1](https://pastebin.com/kYzjDxVK)
-[Level 2](https://pastebin.com/X1YfXTDr)
-[Solution](https://pastebin.com/kQwR7MZp)
+[Level 1](https://pastebin.com/kYzjDxVK)    
+[Level 2](https://pastebin.com/X1YfXTDr)    
+[Solution](https://pastebin.com/kQwR7MZp)    
 
 #### Bonus: Tower of Hanoi
 
