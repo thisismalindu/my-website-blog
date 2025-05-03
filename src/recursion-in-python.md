@@ -203,6 +203,20 @@ Try this yourself. It is pretty easy. You can find some hints here:
 [Level 2](https://pastebin.com/X1YfXTDr)    
 [Solution](https://pastebin.com/kQwR7MZp)    
 
+#### 5.5 Recursive File Walker
+
+```python
+import os
+
+def walk(path):
+    for entry in os.listdir(path):
+        full = os.path.join(path, entry)
+        if os.path.isdir(full):
+            walk(full)
+        else:
+            print(full)
+```
+
 #### Bonus: Tower of Hanoi
 
 Look this up and find what this is yourself. It is quite interesting problem that is solved easily using recursion.  
@@ -223,6 +237,18 @@ factorial(3)
 ```
 
 Each call is paused until the next one finishes.
+
+**Draw the Call Stack:** see how the stack builds and unwinds.
+
+```python
+def func(n):
+    print(f"Entering {n}")
+    if n == 0:
+        return 0
+    result = func(n - 1)
+    print(f"Returning from {n}")
+    return result
+```
 
 ---
 
@@ -286,66 +312,7 @@ def tail_power(x, n, acc=1):
 
 ---
 
-### 9. Real-Life Uses
-
-#### Check Palindrome
-
-**Recursive:**
-
-```python
-def is_palindrome(s):
-    if len(s) <= 1:
-        return True
-    if s[0] != s[-1]:
-        return False
-    return is_palindrome(s[1:-1])
-```
-
-**Iterative:**
-
-```python
-def is_palindrome_iter(s):
-    return s == s[::-1]
-```
-
-#### Sum of a List
-
-**Recursive:**
-
-```python
-def list_sum(nums):
-    if not nums:
-        return 0
-    return nums[0] + list_sum(nums[1:])
-```
-
-**Iterative:**
-
-```python
-def list_sum_iter(nums):
-    total = 0
-    for num in nums:
-        total += num
-    return total
-```
-
-#### Towers of Hanoi
-
-```python
-def hanoi(n, source, target, spare):
-    if n == 1:
-        print(f"Move disk 1 from {source} to {target}")
-    else:
-        hanoi(n-1, source, spare, target)
-        print(f"Move disk {n} from {source} to {target}")
-        hanoi(n-1, spare, target, source)
-```
-
-(This one is tough to write without recursion.)
-
----
-
-### 10. Recursion Tips
+### 9. Recursion Tips
 
 - Always stop with a base case.
 - Make progress toward that base.
@@ -353,9 +320,22 @@ def hanoi(n, source, target, spare):
 - Python limits recursion depth.
 - Use loops or memoization if needed.
 
+**Most beginners get stuck in infinite recursion.**     
+Small trick:
+
+```python
+def factorial(n, depth=0):
+    print("  " * depth + f"factorial({n})")
+    if n == 0:
+        return 1
+    return n * factorial(n - 1, depth + 1)
+```
+
 ---
 
-### 11. Recursion Limit in Python
+### 10. Recursion Limit in Python
+
+`RecursionError` gets thrown at around 1000 calls (default).
 
 ```python
 import sys
@@ -365,7 +345,7 @@ sys.setrecursionlimit(2000)  # Be careful with this
 
 ---
 
-### 12. Summary
+### 11. Summary
 
 - Recursion = solving a big problem by solving a smaller version of it.
 - Needs a base case to stop.
