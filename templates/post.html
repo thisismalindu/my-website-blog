@@ -181,9 +181,26 @@
 
         setTimeout(() => {
           document.body.removeChild(toast);
-        }, 3000);
+        }, 800);
       }).catch(err => {
         console.error("Failed to copy Markdown:", err);
+      });
+    };
+
+    window.copyCode = function (code) {
+      window.removeAllToasts(); // Remove existing toasts before showing a new one
+
+      navigator.clipboard.writeText(code).then(() => {
+        const toast = document.createElement("div");
+        toast.textContent = "Code copied to clipboard!";
+        toast.className = "toast";
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+          document.body.removeChild(toast);
+        }, 800);
+      }).catch(err => {
+        console.error("Failed to copy code:", err);
       });
     };
   </script>
