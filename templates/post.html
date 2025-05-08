@@ -187,9 +187,10 @@
       });
     };
 
-    window.copyCode = function (code) {
+    window.copyCode = function (button) {
       window.removeAllToasts(); // Remove existing toasts before showing a new one
 
+      const code = button.getAttribute("data-code"); // Retrieve the code from the data-code attribute
       navigator.clipboard.writeText(code).then(() => {
         const toast = document.createElement("div");
         toast.textContent = "Code copied to clipboard!";

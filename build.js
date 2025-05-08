@@ -14,7 +14,7 @@ const md = new MarkdownIt({
     if (lang && hljs.getLanguage(lang)) {
       
       try {
-        return `<pre><div class="language-label">${lang}<button class="copy-code-button" onclick="copyCode(\`${str}\`)" title="Copy Code"><span class="material-icons" aria-label="Copy Code" data-tooltip="Copy Code">content_copy</span></button></div><code class="hljs ${lang}">${hljs.highlight(str, { language: lang }).value}</code></pre>`;
+        return `<pre><div class="language-label">${lang}<button class="copy-code-button" data-code="${md.utils.escapeHtml(str)}" onclick="copyCode(this)" title="Copy Code"><span class="material-icons" aria-label="Copy Code" data-tooltip="Copy Code">content_copy</span>  </button></div><code class="hljs ${lang}">${hljs.highlight(str, { language: lang }).value}</code></pre>`;
       } catch (__) {}
 
       
