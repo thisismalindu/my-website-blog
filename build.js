@@ -12,13 +12,17 @@ const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const md = new MarkdownIt({
   highlight: (str, lang) => {
     if (lang && hljs.getLanguage(lang)) {
+      
       try {
         return `<pre><div class="language-label">${lang}</div><code class="hljs ${lang}">${hljs.highlight(str, { language: lang }).value}</code></pre>`;
       } catch (__) {}
+
+      
     }
     return `<pre><code>${md.utils.escapeHtml(str)}</code></pre>`;
   },
 });
+
 
 const POSTS_DIR = path.join(__dirname, "src");
 const TEMPLATES_DIR = path.join(__dirname, "templates");
