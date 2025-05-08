@@ -1,25 +1,22 @@
-// build.js
-
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import MarkdownIt from "markdown-it";
 import hljs from "highlight.js"; // Import highlight.js
 
+hljs.registerLanguage("asm", () => import("highlight.js/lib/languages/x86asm"));
+
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 // Configure MarkdownIt with syntax highlighting
 const md = new MarkdownIt({
   highlight: (str, lang) => {
-    if (lang && hljs.getLanguage(lang)) {
-      
-      try {
-        return `<pre><div class="language-label">${lang}<button class="copy-code-button" data-code="${md.utils.escapeHtml(str)}" onclick="copyCode(this)" title="Copy Code"><span class="material-icons" aria-label="Copy Code" data-tooltip="Copy Code">content_copy</span>  </button></div><code class="hljs ${lang}">${hljs.highlight(str, { language: lang }).value}</code></pre>`;
-      } catch (__) {}
 
-      
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return `<pre><div class="language-label">${(lang == 'asm' ? 'asm' : lang)}<button class="copy-code-button" data-code="${md.utils.escapeHtml(str)}" onclick="copyCode(this)" title="Copy Code"><span class="material-icons" aria-label="Copy Code" data-tooltip="Copy Code">content_copy</span>  </button></div><code class="hljs ${(lang == 'asm' ? 'x86asm' : lang)}">${hljs.highlight(str, { language: (lang == 'asm' ? 'x86asm' : lang) }).value}</code></pre>`;
+      } catch (__) { }
     }
-    return `<pre><code>${md.utils.escapeHtml(str)}</code></pre>`;
   },
 });
 

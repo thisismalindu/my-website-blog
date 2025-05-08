@@ -38,13 +38,11 @@ So now I’m thinking of taking this further. Maybe even trying x86 assembly, wr
 
 For now, here's a collection of what we did in our assembly lab using the SMZ32V50 simulator. This was part of a formal assignment, but honestly, I enjoyed it way more than I expected.
 
->Since the markdown library I am using has a complicated way of dealing with code blocks, I will be labelling the following code blocks as `x86asm`, however, I am not using `x86asm`, but rather a language used with the assembly simulator [smz32v50](https://github.com/ethornbury/smz32v50-micrprocessor). It is however, "based on the x86 architecture and intended for students learning low level programming".
-
 ### 1. Basic Math in Assembly
 
 **Addition:**
 
-```x86asm
+```asm
 MOV AL,2	; Copy a 2 into the AL register.
 MOV BL,2	; Copy a 2 into the BL register.
 ADD AL,BL	; Add AL to BL. Answer goes into AL.
@@ -55,7 +53,7 @@ END		    ; Program ends
 
 **Subtraction:**
 
-```x86asm
+```asm
 MOV AL,2	; Copy a 2 into the AL register.
 MOV BL,2	; Copy a 2 into the BL register.
 SUB AL,BL	; Subtract BL from AL. Answer goes into AL.
@@ -66,7 +64,7 @@ END		    ; Program ends
 
 **Multiplication:**
 
-```x86asm
+```asm
 MOV AL,2	; Copy a 2 into the AL register.
 MOV BL,3	; Copy a 2 into the BL register.
 MUL AL,BL	; Multiply AL and BL. Answer goes into AL.
@@ -77,7 +75,7 @@ END		    ; Program ends
 
 **Division:**
 
-```x86asm
+```asm
 	MOV AL,2	; Copy a 2 into the AL register.
 	MOV BL,2	; Copy a 2 into the BL register.
 	DIV AL,BL	; Divide AL by BL. Answer goes into AL.
@@ -94,7 +92,7 @@ These are the most basic things, but seeing how each operation actually moves th
 
 We implemented a traffic light logic using port outputs and created time delays by manually looping through instructions. This was my first real encounter with writing a procedure in assembly and managing the stack to preserve CPU state.
 
-```x86asm
+```asm
 
 ;------------- Main Program -----------------
 
@@ -142,7 +140,7 @@ END
 
 We’re using specific values to represent light combinations (based on how the ports are wired). Then we delay using a custom procedure:
 
-```x86asm
+```asm
 ;------- procedure to do the timer ---------
 
 	ORG	30	    ; this proc starts at [30]
@@ -172,7 +170,7 @@ This part blew my mind. We literally made a **timer** out of a loop that counts 
 
 Because my index number ends in 78, I had the display show those digits. I’m not gonna lie, it was weirdly satisfying seeing those LEDs light up based on my code.
 
-```x86asm
+```asm
 MOV	AL,00	  ; reset display0
 OUT	02
 MOV	AL,01	  ; reset display1 (here the last bit controls which display we are using)
@@ -195,7 +193,7 @@ Each `OUT` sends a value to a specific port, and depending on your circuit setup
 
 Finally, I wrote a loop in assembly to calculate 5! using `MUL`, `DEC`, and `JNZ`. This made me appreciate just how many steps are hidden behind a single `for` loop in a high-level language.
 
-```x86asm
+```asm
 MOV BL,5	    ; factorial of 5
 MOV AL,1	    ; multiplier
 
