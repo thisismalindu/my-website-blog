@@ -43,10 +43,12 @@ For now, here's a collection of what we did in our assembly lab using the SMZ32V
 **Addition:**
 
 ```asm
+
 MOV AL,2
 MOV BL,2
 ADD AL,BL
 END
+
 ```
 
 * This simply adds two values (2 and 2) by first loading them into registers AL and BL. The result (4) stays in AL.
@@ -54,10 +56,12 @@ END
 **Subtraction:**
 
 ```asm
+
 MOV AL,2
 MOV BL,2
 SUB AL,BL
 END
+
 ```
 
 * Same idea. AL starts at 2, and we subtract BL (2) from it. AL becomes 0.
@@ -65,10 +69,12 @@ END
 **Multiplication:**
 
 ```asm
+
 MOV AL,2
 MOV BL,3
 MUL AL,BL
 END
+
 ```
 
 * Multiply AL and BL. 2 \* 3 = 6. The result goes back into AL.
@@ -76,10 +82,12 @@ END
 **Division:**
 
 ```asm
+
 MOV AL,2
 MOV BL,2
 DIV AL,BL
 END
+
 ```
 
 * Divide AL by BL. 2 / 2 = 1. Again, AL holds the result.
@@ -93,6 +101,7 @@ These are the most basic things, but seeing how each operation actually moves th
 We implemented a traffic light logic using port outputs and created time delays by manually looping through instructions. This was my first real encounter with writing a procedure in assembly and managing the stack to preserve CPU state.
 
 ```asm
+
 START:
   MOV AL, 84    ; Turn on red light
   OUT 01
@@ -115,6 +124,7 @@ START:
 We’re using specific values to represent light combinations (based on how the ports are wired). Then we delay using a custom procedure:
 
 ```asm
+
 ORG 30
 PUSH AL         ; Save AL before delay
 PUSHF           ; Save flags
@@ -137,6 +147,7 @@ This part blew my mind. We literally made a **timer** out of a loop that counts 
 Because my index number ends in 78, I had the display show those digits. I’m not gonna lie-it was weirdly satisfying seeing those LEDs light up based on my code.
 
 ```asm
+
 MOV AL,00
 OUT 02          ; Clear display
 MOV AL,01
@@ -148,6 +159,7 @@ OUT 02          ; Display '7' and '8' in hex encoding
 MOV AL,FF
 OUT 02          ; Possibly blank/reset
 END
+
 ```
 
 Each `OUT` sends a value to a specific port, and depending on your circuit setup, the display shows something. In this case, `8A` probably corresponds to 7 and 8 when split across two digits.
@@ -159,6 +171,7 @@ Each `OUT` sends a value to a specific port, and depending on your circuit setup
 Finally, I wrote a loop in assembly to calculate 5! using `MUL`, `DEC`, and `JNZ`. This made me appreciate just how many steps are hidden behind a single `for` loop in a high-level language.
 
 ```asm
+
 MOV BL,5        ; Counter = 5
 MOV AL,1        ; Result = 1
 
@@ -167,7 +180,8 @@ proc:
   DEC BL        ; BL--
   JNZ proc      ; Repeat until BL = 0
 
-end
+END
+
 ```
 
 In C, this would be a one-liner inside a loop. But here? Every multiplication, decrement, and check is spelled out. You *feel* every CPU tick.
