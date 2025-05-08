@@ -293,12 +293,21 @@ footer {
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
+  align-items: center;
 }
 
 
 footer p{
   color: var(--dimmed-text-color);
   font-size: 0.8rem;
+}
+
+.visitor-badge{
+  width: 70px;
+  position: absolute;
+  top: 0;
+  right: 0;
+
 }
 
 .social-links {
