@@ -288,6 +288,10 @@ footer p{
   
 }
 
+ul{
+  margin-bottom: 10px;
+}
+
 li{
   font-size: 0.9rem;
   list-style-type: circle;
