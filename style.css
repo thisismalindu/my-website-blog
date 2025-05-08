@@ -15,6 +15,7 @@
   --code-background: #21252b;
   --link-color: #61afef;
   --home-link-color: #abb2bf;
+  --blockquote-border: #2077be;
   
   --toast-background: #44658b;
   --fba-background: #2c313c;
@@ -298,4 +299,13 @@ code:not([class]) {
   padding: 2px 6px;
   border-radius: 5px;
   font-weight: bold;
+}
+
+blockquote{
+  background-color: var(--section-background);
+  border-left: 4px solid var(--blockquote-border);
+  padding: 12px 10px 1px 15px;
+  margin: 20px 0;
+  color: var(--dimmed-text-color);
+  font-style: italic;
 }
