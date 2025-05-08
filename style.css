@@ -300,6 +300,12 @@ footer {
   align-items: center;
 }
 
+@media (max-width: 600px) {
+  footer {
+    padding-bottom: 3rem;
+  }
+}
+
 
 footer p{
   color: var(--dimmed-text-color);
