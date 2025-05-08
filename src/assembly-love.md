@@ -8,7 +8,7 @@ pinned: false
 tags: low-level, asm, kuppi, uni
 -->
 
-I think I just fell in love—with assembly language.
+I think I just fell in love - with assembly language.
 
 Not in a weird, obsessive way. More like the feeling of finally seeing what was behind the curtain of everything I’ve ever done in programming.
 
@@ -16,21 +16,21 @@ I’d heard about assembly before, of course. I’d even peeked into compiler ou
 
 At university, we have this module called *Computer Organization and Digital Design*. As part of that, we’re building a **nano processor** (yeah, from scratch), and obviously, to control it, we need to program it in assembly.
 
-That’s where things clicked for me. Writing instructions at this level wasn’t just educational—it was electrifying. It felt like I was finally communicating with the raw machine. No abstractions. Just pure logic, registers, ports, and flags.
+That’s where things clicked for me. Writing instructions at this level wasn’t just educational-it was electrifying. It felt like I was finally communicating with the raw machine. No abstractions. Just pure logic, registers, ports, and flags.
 
-And then it hit me—like a proper lightbulb moment.
+And then it hit me-like a proper lightbulb moment.
 
-This wasn't just low-level. This was *the level*. Every tiny thing, from a loop to a variable assignment, from a print statement to a condition—it’s all here, exposed and tangible. Assembly didn’t just show me how computers work; it *made me feel it*.
+This wasn't just low-level. This was *the level*. Every tiny thing, from a loop to a variable assignment, from a print statement to a condition-it’s all here, exposed and tangible. Assembly didn’t just show me how computers work; it *made me feel it*.
 
-We used a simulator called **SMZ32V50**, and even though it's not real hardware, it still counts in my book. It gave me this brand new mental model of how CPUs actually work—what an instruction really *does* when it’s executed.
+We used a simulator called **SMZ32V50**, and even though it's not real hardware, it still counts in my book. It gave me this brand new mental model of how CPUs actually work-what an instruction really *does* when it’s executed.
 
 It’s wild how something as simple as `MOV AL, 2` starts making sense as a real action happening on a register somewhere. This stuff makes C look bloated.
 
-It’s like... if in Python we wrote `left.red = True`, in assembly, we’re the ones building what happens *underneath* that line. We're not just setting a variable—we're sending electrical signals to the correct memory-mapped port and holding it there for a few clock cycles. You don’t just write what should happen—you *make* it happen. That’s magic.
+It’s like... if in Python we wrote `left.red = True`, in assembly, we’re the ones building what happens *underneath* that line. We're not just setting a variable-we're sending electrical signals to the correct memory-mapped port and holding it there for a few clock cycles. You don’t just write what should happen-you *make* it happen. That’s magic.
 
-And that delay mechanism we implemented? It absolutely blew me away. Just using `DEC` and `JNZ` to create a countdown—looping over and over just to simulate time passing—felt surreal. I’d never appreciated how much effort the CPU goes through just to do something as simple as showing a message on screen or blinking an LED.
+And that delay mechanism we implemented? It absolutely blew me away. Just using `DEC` and `JNZ` to create a countdown-looping over and over just to simulate time passing-felt surreal. I’d never appreciated how much effort the CPU goes through just to do something as simple as showing a message on screen or blinking an LED.
 
-So now I’m thinking of taking this further. Maybe even trying x86 assembly, writing a real program. I don’t even know what yet—but the idea alone excites me.
+So now I’m thinking of taking this further. Maybe even trying x86 assembly, writing a real program. I don’t even know what yet-but the idea alone excites me.
 
 ---
 
@@ -134,7 +134,7 @@ This part blew my mind. We literally made a **timer** out of a loop that counts 
 
 ### 3. Seven-Segment Display: Showing "78"
 
-Because my index number ends in 78, I had the display show those digits. I’m not gonna lie—it was weirdly satisfying seeing those LEDs light up based on my code.
+Because my index number ends in 78, I had the display show those digits. I’m not gonna lie-it was weirdly satisfying seeing those LEDs light up based on my code.
 
 ```asm
 MOV AL,00
@@ -174,6 +174,6 @@ In C, this would be a one-liner inside a loop. But here? Every multiplication, d
 
 ---
 
-That’s it for now. I’m seriously considering making assembly programming a regular thing. It’s not just “closer to the metal”—it *is* the metal.
+That’s it for now. I’m seriously considering making assembly programming a regular thing. It’s not just “closer to the metal”-it *is* the metal.
 
 Let’s see where this obsession takes me.
