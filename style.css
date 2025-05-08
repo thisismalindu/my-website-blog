@@ -107,6 +107,10 @@ section {
 .post {
   text-align: center;
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .post h1{
@@ -353,4 +357,9 @@ blockquote{
   margin: 20px 0;
   color: var(--dimmed-text-color);
   font-style: italic;
+}
+
+.giscus{
+  max-width: 800px;
+  margin: auto;
 }
