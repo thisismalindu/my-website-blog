@@ -453,6 +453,7 @@ def kruskal(n, edges):
 4. **Queue:** Use for BFS, level-order processing
 5. **Priority Queue:** Use for problems requiring min/max element access
 
+
 ### Time Complexity Quick Guide
 
 - **O(1):** Hash table operations, array access
@@ -472,8 +473,6 @@ def kruskal(n, edges):
 5. **Time Limits:** Choose appropriate algorithm based on constraints
 
 This cheatsheet provides the essential algorithms and data structures needed for competitive programming, with practical implementations and usage guidelines optimized for quick reference during contests.
-
-<div style="text-align: center">⁂</div>
 
 [^1]: https://www.programiz.com/dsa/bubble-sort
 
