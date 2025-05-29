@@ -1,5 +1,5 @@
 <!--  
-title: "DSA Cheatsheet"  
+title: "DSA Cheatsheet for Competitive Programming"  
 author: "Malindu"  
 date: "2025-05-29"  
 excerpt: "Comprehensive cheatsheet for Data Structures and Algorithms"  
@@ -7,8 +7,6 @@ img: "/img/assembly-love.png"
 pinned: false  
 tags: dsa, data structures, algorithms, cheatsheet
 -->
-
-# DSA Cheatsheet for Competitive Programming
 
 This comprehensive cheatsheet provides essential algorithms and data structures with practical implementations, usage tips, and competitive programming insights for quick reference during HackerRank competitions and similar contests.
 
