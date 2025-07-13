@@ -169,6 +169,11 @@
       "source": "/wa",
       "destination": "https://wa.me/+94757768268",
       "statusCode": 301
+    },
+    {
+      "source": "/aca3",
+      "destination": "https://uniofmora-my.sharepoint.com/:f:/g/personal/talagalasa_22_uom_lk/EjuPc1CKeBZLtj5rtUiAQH0BrWjztoT0XGTfP3dmR69gig?e=g4chSP",
+      "statusCode": 301
     }
   ]
 }
