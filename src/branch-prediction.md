@@ -8,7 +8,7 @@ pinned: false
 tags: low-level, asm, kuppi, uni, branch-prediction, riscv, computer-architecture, codd
 -->
 
-### Branch Prediction: CPU Trying To Be a Fortune Teller
+## Branch Prediction: CPU Trying To Be a Fortune Teller
 
 okay so here’s the deal. modern CPUs are crazy fast but they run into this one annoying problem: **branches**.
 
@@ -20,7 +20,7 @@ so some genius came up with the hack: **what if we don’t wait… what if we ju
 
 ---
 
-#### guessing instead of waiting
+### guessing instead of waiting
 
 instead of sitting idle, the CPU picks a path and just keeps going.
 
@@ -31,7 +31,7 @@ so the whole trick is - guess right as often as possible.
 
 ---
 
-#### how does it guess?
+### how does it guess?
 
 there’s basically 2 ways:
 
@@ -63,7 +63,7 @@ modern CPUs are insane - they combine predictors, look at patterns from *other* 
 
 ---
 
-#### speculative execution - the bold move
+### speculative execution - the bold move
 
 branch prediction doesn’t just fetch the next instructions. it actually **executes them**. like full-on doing math, memory loads, everything.
 
@@ -76,7 +76,7 @@ from your program’s point of view, it never sees mistakes, just a little extra
 
 ---
 
-#### why it’s beautiful (and a little scary)
+### why it’s beautiful (and a little scary)
 
 branch prediction is basically CPU engineers saying: "since physics won’t let us wait faster, let’s just cheat."
 
