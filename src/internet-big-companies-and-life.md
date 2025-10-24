@@ -62,7 +62,7 @@ Third, and most relevant to me, is **technology**. The foundational companies of
 
 This brings us to the US-China rivalry. It’s not a comic-book battle of good versus evil. It’s a clash of two empires who both know the game. The US built its empire within the system it created. China is now building its own, parallel system. They have their own search engines, their own social networks, their own tech giants like Huawei.
 
-When China bans US services and builds its own, the US gets mad. Why? Because it’s a direct threat to their control. It’s not about freedom; it’s about market access, data, and the power to set the next generation of technological rules. The US response—rallying allies, imposing sanctions—is the established empire trying to discipline the rising one. It’s the same old story, just with fiber optic cables and microchips instead of coal and steel.
+When China bans US services and builds its own, the US gets mad. Why? Because it’s a direct threat to their control. It’s not about freedom; it’s about market access, data, and the power to set the next generation of technological rules. The US response—rallying allies, imposing sanctions—is the established empire trying to discipline the rising one. It’s the same old story, just with fiber optic cables and microchips instead of coal and steel. Funny enough, I used China's Deepseek to write this article, because both Gemini and ChatGPT failed at reading the entire chat and giving out a proper detailed article that reflects my thoughts, either the article was too complicated, or too cringe with the obvious giveaways of being AI written.
 
 **The Pointless Race and the Simple Life**
 
