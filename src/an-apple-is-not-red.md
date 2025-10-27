@@ -7,7 +7,7 @@ img: "/img/how-i-built-this-blog.png"
 pinned: True  
 -->
 
-If you read my last [article](src\assembly-love.md), you'd know that I use AI to write these articles. I want to make that disclaimer before we proceed. Ironically I am not really an advocate of AI, although I am quite bad at writing a long collected article like this. I do not have the discipline to sit down and write it so structured in a way that someone would actually read it. So, to get my idea across, I use AI. This article was written based on the conversation I had with Deepseek. However, there are some lines that I came up with myself, which are italicized.
+If you read my last [article](assembly-love.md), you'd know that I use AI to write these articles. I want to make that disclaimer before we proceed. Ironically I am not really an advocate of AI, although I am quite bad at writing a long collected article like this. I do not have the discipline to sit down and write it so structured in a way that someone would actually read it. So, to get my idea across, I use AI. This article was written based on the conversation I had with Deepseek. However, there are some lines that I came up with myself, which are italicized.
 
 ### **The Beautiful Lie Your Brain Tells You**
 
