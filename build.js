@@ -10,6 +10,7 @@ const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 // Configure MarkdownIt with syntax highlighting
 const md = new MarkdownIt({
+  html: true,
   highlight: (str, lang) => {
 
     if (lang && hljs.getLanguage(lang)) {
@@ -53,8 +54,9 @@ function extractMetadataAndContent(fileContent) {
   return { metadata, htmlContent, markdownContent };
 }
 
-function buildPostPage(slug, metadata, content, markdownContent) {
-  let page = POST_TEMPLATE.replace("{{title}}", metadata.title || "Untitled");
+function buildPostPage(slug, metadata, content, markdownContent, isPost = true) {
+  let pageTemplate = isPost ? POST_TEMPLATE : PAGE_TEMPLATE;
+  let page = pageTemplate.replace("{{title}}", metadata.title || "Untitled");
   page = page.replace(/{{title}}/g, metadata.title || "Unknown"); // Replace all occurrences of {{title}}
   page = page.replace(/{{author}}/g, metadata.author || "Unknown");
   page = page.replace(/{{postId}}/g, slug);
@@ -130,9 +132,14 @@ function buildAll() {
     const raw = fs.readFileSync(path.join(POSTS_DIR, file), "utf-8");
     const { metadata, htmlContent, markdownContent } = extractMetadataAndContent(raw); // Get markdownContent
 
-    buildPostPage(slug, metadata, htmlContent, markdownContent); // Pass markdownContent directly
+    const isManualPage = metadata.manual && metadata.manual.toLowerCase() === "true";
+    if (isManualPage) {
+      return;
+    }
 
     const isPost = metadata.post === undefined || metadata.post.toLowerCase() !== "false";
+
+    buildPostPage(slug, metadata, htmlContent, markdownContent, isPost); // Pass markdownContent directly
 
     if (isPost) {
       postSummaries.push({

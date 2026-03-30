@@ -161,6 +161,32 @@ section {
   padding: 0 20px;
 }
 
+.page {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 20px;
+}
+
+.page h1 {
+  text-align: center;
+}
+
+.page-content {
+  background: var(--article-background);
+  border: 1px solid var(--article-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.page-content h2 {
+  color: var(--header2-color);
+  margin-bottom: 8px;
+}
+
+.page-content p {
+  margin-bottom: 14px;
+}
+
 /* Article Styles */
 article {
   max-width: 800px;
