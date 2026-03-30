@@ -132,14 +132,18 @@ function buildAll() {
 
     buildPostPage(slug, metadata, htmlContent, markdownContent); // Pass markdownContent directly
 
-    postSummaries.push({
-      slug,
-      title: metadata.title || slug,
-      author: metadata.author || "Unknown",
-      date: metadata.date || "",
-      excerpt: metadata.excerpt || "",
-      pinned: metadata.pinned === "True", // Convert string to boolean
-    });
+    const isPost = metadata.post === undefined || metadata.post.toLowerCase() !== "false";
+
+    if (isPost) {
+      postSummaries.push({
+        slug,
+        title: metadata.title || slug,
+        author: metadata.author || "Unknown",
+        date: metadata.date || "",
+        excerpt: metadata.excerpt || "",
+        pinned: metadata.pinned === "True", // Convert string to boolean
+      });
+    }
   });
 
   buildBlogPage(postSummaries);

@@ -354,6 +354,15 @@ footer p {
   width: 70px;
 }
 
+.visitor-badge-post-page {
+  position: absolute;
+  width: 70px;
+
+  top: 1%;
+  right: 10px;
+  z-index: 999;
+}
+
 .social-links {
   display: flex;
   justify-content: center;

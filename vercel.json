@@ -7,7 +7,7 @@
     },
     {
       "source": "/extra/:path*",
-      "destination": "https://thisismalindu.github.io/www/:path*",
+      "destination": "/extra/:path*",
       "permanent": true
     },
     {
@@ -77,7 +77,7 @@
     },
     {
       "source": "/facebook",
-      "destination": "https://fb.com/thisismalindu",
+      "destination": "/fb",
       "permanent": true
     },
     {
@@ -87,7 +87,7 @@
     },
     {
       "source": "/instagram",
-      "destination": "https://instagram.com/thisismalindu",
+      "destination": "/ig",
       "permanent": true
     },
     {
@@ -96,8 +96,18 @@
       "permanent": true
     },
     {
+      "source": "/yt2",
+      "destination": "https://youtube.com/@wearesciber",
+      "permanent": true
+    },
+    {
       "source": "/youtube",
-      "destination": "https://youtube.com/@thisismalindu",
+      "destination": "/yt",
+      "permanent": true
+    },
+    {
+      "source": "/youtube2",
+      "destination": "/yt2",
       "permanent": true
     },
     {
@@ -107,7 +117,7 @@
     },
     {
       "source": "/tiktok",
-      "destination": "https://tiktok.com/@thisismalindu",
+      "destination": "/tt",
       "permanent": true
     },
     {
@@ -117,7 +127,7 @@
     },
     {
       "source": "/github",
-      "destination": "https://github.com/thisismalindu",
+      "destination": "/gh",
       "permanent": true
     },
     {
@@ -127,7 +137,7 @@
     },
     {
       "source": "/github/:path*",
-      "destination": "https://github.com/thisismalindu/:path*",
+      "destination": "/gh/:path*",
       "permanent": true
     },
     {
@@ -137,12 +147,12 @@
     },
     {
       "source": "/twitter",
-      "destination": "https://x.com/thisismalindu",
+      "destination": "/tw",
       "permanent": true
     },
     {
       "source": "/x",
-      "destination": "https://x.com/thisismalindu",
+      "destination": "/tw",
       "permanent": true
     },
     {
@@ -152,12 +162,12 @@
     },
     {
       "source": "/telegram",
-      "destination": "https://t.me/thisismalindu",
+      "destination": "/tg",
       "permanent": true
     },
     {
       "source": "/whatsapp",
-      "destination": "https://wa.me/+94757768268",
+      "destination": "/wa",
       "permanent": true
     },
     {
@@ -165,11 +175,7 @@
       "destination": "https://wa.me/+94757768268",
       "permanent": true
     },
-    {
-      "source": "/aca3",
-      "destination": "https://uniofmora-my.sharepoint.com/:f:/g/personal/talagalasa_22_uom_lk/EjuPc1CKeBZLtj5rtUiAQH0BrWjztoT0XGTfP3dmR69gig?e=g4chSP",
-      "permanent": true
-    },
+
     {
       "source": "/birdseye",
       "destination": "https://docs.google.com/document/d/1S5nhBya8Jih6MNDbqdABcAMOGW_h2j4eKkFTu6MXjNY/edit?usp=sharing",
@@ -181,15 +187,14 @@
       "permanent": true
     },
     {
+      "source": "/aca3",
+      "destination": "https://uniofmora-my.sharepoint.com/:f:/g/personal/talagalasa_22_uom_lk/EjuPc1CKeBZLtj5rtUiAQH0BrWjztoT0XGTfP3dmR69gig?e=g4chSP",
+      "permanent": true
+    },
+    {
       "source": "/aca4",
       "destination": "https://uniofmora-my.sharepoint.com/personal/jayathungardss_22_uom_lk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjayathungardss%5F22%5Fuom%5Flk%2FDocuments%2FCSE%204th%20Semester%20Academic%20Folder&ga=1",
       "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/contact",
-      "destination": "mailto:thisismalindu@gmail.com"
     }
   ]
 }
