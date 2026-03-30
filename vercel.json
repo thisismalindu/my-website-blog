@@ -3,193 +3,192 @@
     {
       "source": "/webdev101/:path*",
       "destination": "https://webdev101.thisismalindu.com/:path*",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/extra/:path*",
       "destination": "https://thisismalindu.github.io/www/:path*",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/extra/",
       "destination": "https://thisismalindu.github.io/www/",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/main.cpp",
       "destination": "https://gist.github.com/thisismalindu/cb0b1bdf8938641596e0a0eb0f18231b",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/imagegallery.html",
       "destination": "https://thisismalindu.github.io/www/imagegallery.html",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/html-css-only.html",
       "destination": "https://thisismalindu.github.io/www/html-css-only.html",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/basicwebsite.html",
       "destination": "https://thisismalindu.github.io/www/basicwebsite.html",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/basicwebsite",
       "destination": "https://thisismalindu.github.io/basic-website-tutorial-webdev101/",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/basicwebsite/:path*",
       "destination": "https://thisismalindu.github.io/basic-website-tutorial-webdev101/:path*",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/downloads",
       "destination": "https://thisismalindu.github.io/www/downloads",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/downloads/:path*",
       "destination": "https://thisismalindu.github.io/www/downloads/:path*",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/courses",
       "destination": "https://webdev101.thisismalindu.com/",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/contact",
       "destination": "mailto:thisismalindu@gmail.com",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/webdev101/",
       "destination": "https://webdev101.thisismalindu.com/",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/webdev101",
       "destination": "https://webdev101.thisismalindu.com/",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/fb",
       "destination": "https://fb.com/thisismalindu",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/facebook",
       "destination": "https://fb.com/thisismalindu",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/ig",
       "destination": "https://instagram.com/thisismalindu",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/instagram",
       "destination": "https://instagram.com/thisismalindu",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/yt",
       "destination": "https://youtube.com/@thisismalindu",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/youtube",
       "destination": "https://youtube.com/@thisismalindu",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/tt",
       "destination": "https://tiktok.com/@thisismalindu",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/tiktok",
       "destination": "https://tiktok.com/@thisismalindu",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/gh",
       "destination": "https://github.com/thisismalindu",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/github",
       "destination": "https://github.com/thisismalindu",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/gh/:path*",
       "destination": "https://github.com/thisismalindu/:path*",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/github/:path*",
       "destination": "https://github.com/thisismalindu/:path*",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/tw",
       "destination": "https://x.com/thisismalindu",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/twitter",
       "destination": "https://x.com/thisismalindu",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/x",
       "destination": "https://x.com/thisismalindu",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/tg",
       "destination": "https://t.me/thisismalindu",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/telegram",
       "destination": "https://t.me/thisismalindu",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/whatsapp",
       "destination": "https://wa.me/+94757768268",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/wa",
       "destination": "https://wa.me/+94757768268",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/aca3",
       "destination": "https://uniofmora-my.sharepoint.com/:f:/g/personal/talagalasa_22_uom_lk/EjuPc1CKeBZLtj5rtUiAQH0BrWjztoT0XGTfP3dmR69gig?e=g4chSP",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/birdseye",
       "destination": "https://docs.google.com/document/d/1S5nhBya8Jih6MNDbqdABcAMOGW_h2j4eKkFTu6MXjNY/edit?usp=sharing",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/birdseyepdf",
       "destination": "https://drive.google.com/file/d/1vLpUPFQoeITD0izEcNJ1vs-aHF7Nk-rm/view?usp=sharing",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/aca4",
       "destination": "https://uniofmora-my.sharepoint.com/personal/jayathungardss_22_uom_lk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjayathungardss%5F22%5Fuom%5Flk%2FDocuments%2FCSE%204th%20Semester%20Academic%20Folder&ga=1",
-      "statusCode": 301
+      "permanent": true
     }
-    
   ]
 }
