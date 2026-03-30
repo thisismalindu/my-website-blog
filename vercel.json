@@ -184,6 +184,11 @@
       "source": "/birdseyepdf",
       "destination": "https://drive.google.com/file/d/1vLpUPFQoeITD0izEcNJ1vs-aHF7Nk-rm/view?usp=sharing",
       "statusCode": 301
+    },
+    {
+      "source": "/aca4",
+      "destination": "https://uniofmora-my.sharepoint.com/personal/jayathungardss_22_uom_lk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjayathungardss%5F22%5Fuom%5Flk%2FDocuments%2FCSE%204th%20Semester%20Academic%20Folder&ga=1",
+      "statusCode": 301
     }
     
   ]
