@@ -62,7 +62,7 @@
     },
     {
       "source": "/contact",
-      "destination": "/telegram",
+      "destination": "mailto:thisismalindu@gmail.com",
       "statusCode": 301
     },
     {
