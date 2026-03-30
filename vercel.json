@@ -189,7 +189,7 @@
   "rewrites": [
     {
       "source": "/contact",
-      "destination": "mailto:thisismalindu@gmail.com",
+      "destination": "mailto:thisismalindu@gmail.com"
     }
   ]
 }
