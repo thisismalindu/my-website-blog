@@ -18,6 +18,8 @@ If you want to talk or reach out, 📧 email me at [thisismalindu@gmail.com](mai
 The ultimate test to befriend me is sending an *ig reel* 🐘.  
 You can also find my other projects on [GitHub](https://thisismalindu.com/github). Socials are at the bottom.
 
+[Download CV](https://drive.google.com/file/d/1S3acJVybywyYoPM_oYlyVMzDjkX7E_RD/view?usp=sharing)
+
 ---
 
 ### 🧭 How to Navigate
